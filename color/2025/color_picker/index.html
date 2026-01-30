@@ -1,0 +1,37 @@
+<html>
+<title>This Endless Frame</title>
+<link rel="stylesheet" href="/style/basic.css">
+<link rel="stylesheet" href="/style/blockquote.css">
+<header>
+  <h1><span id="This Endless Frame">This Endless Frame</span></h1>
+  | <a href="/">Home</a> 
+  | <a href="/notes">Notes</a> 
+  | <a href="/data">Data</a> 
+  | <a href="/color">Color</a> 
+  | <a href="/3d">3D</a> 
+  | <a href="/chirps">Chirps</a> | 
+  <hr>
+</header>
+<h3>Yes, the Color Picker Might Shimmy</h3>
+<p>A simple RGB Color Picker.</p>
+<p>Nothing fancy. In fact, I had Gemini 2.5 write the first draft of an <em>"HTML and JavaScript only"</em> color picker.</p>
+<p>I modified it to have a shade of teal for the initial color.</p>
+<iframe src="/apps/rgb_picker/rgb_picker.html" width="350" height="500" frameborder="0"></iframe>
+
+<p>This is an interactive note - you can use the three sliders to select a custom color.</p>
+<p><img alt="fleuron" src="/style/fleuron.png" /></p>
+<p>There are improvements which could be made (yes it might <a href="https://en.wikipedia.org/wiki/Shimmy">shimmy</a>) but this note is mostly a test of embedding static HTML+JS via an iframe.</p>
+<p>Using <a href="https://github.com/NMoroney/Gavina">Gavina</a>, the Gemini drafted color picker is in:</p>
+<p><code>/input/static/apps/rgb_picker</code></p>
+<p>The corresponding <code>index.md</code> for this note then contains:</p>
+<p><code>&lt;iframe src="/apps/rgb_picker/rgb_picker.html" width="350" height="500" frameborder="0"&gt;&lt;/iframe&gt;</code></p>
+<p>Easy-peasy.</p><br><small>2025-12-21<br>NMoroney</small>
+<footer>
+<hr>
+  | <a href="https://github.com/NMoroney/Gavina">Gavina</a> 
+  | <a href="https://numanticsolutions.com">Numantic Solutions</a> 
+  | <a href=/pages/links>Links</a>
+  | <a href=/pages/colophon>Colophon</a>
+  | <a href=/pages/principles>Principles</a> |
+</footer>
+</html>
