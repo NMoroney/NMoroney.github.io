@@ -1,0 +1,7 @@
+blockquote {
+  background: #f9f9f9;          /* Light gray background */
+  border-left: 10px solid #ccc; /* Thick light gray left border */
+  margin: 1.5em 10px;           /* Top/bottom margin and side margin */
+  padding: 0.5em 10px;          /* Inner padding */
+}
+

@@ -1,0 +1,17 @@
+body { 
+  padding: 75px; 
+  word-break: break-word; 
+  max-width: 600px; 
+  font-family: sans-serif; 
+}
+
+/* horizontal rule */
+hr {
+  border: none;
+  height: 2px;
+  background-color: #dcdcdc;
+}
+
+a:link    { color: #017a87; }
+a:visited { color: #45b8c4; }
+
