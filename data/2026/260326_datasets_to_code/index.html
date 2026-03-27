@@ -1,0 +1,66 @@
+<html>
+<title>This Endless Frame</title>
+<link rel="stylesheet" href="/style/basic.css">
+<link rel="stylesheet" href="/style/blockquote.css">
+<header>
+  <h1><span id="This Endless Frame">This Endless Frame</span></h1>
+  | <a href="/">Home</a> 
+  | <a href="/data">Data</a> 
+  | <a href="/color">Color</a> 
+  | <a href="/3d">3D</a> 
+  | <a href="/notes">Notes</a> 
+  | <a href="/chirps">Chirps</a> | 
+  <hr>
+</header>
+<h3>10 Datasets to 1,500 Lines of Code</h3>
+<p>This post is some back story for the <a href="https://github.com/NMoroney/Gem-D3/tree/main">Gem D3 repo</a>.</p>
+<p><a href="https://github.com/NMoroney/Gem-D3/tree/main"><img alt="Gem D3 thumbnails" src="/images/2026/2603-gem_d3_thumbnails.jpg" /></a></p>
+<p><img alt="fleuron" src="/style/fleuron.png" /></p>
+<p>A while back I took a data visualization class. The class ended up being a <a href="https://en.wikipedia.org/wiki/D3.js">D3.js</a> class, which in turn ended up being a JavaScript class.</p>
+<p>On top of the homework, I ended up writing a series of example functions for common and more interesting visualizations.</p>
+<p>Compared to <a href="https://matplotlib.org&quot;&gt;matplotlib">matplotlib</a> or <a href="https://seaborn.pydata.org">seaborn</a>, it might take a fair amount of code to generate a specific chart. For example, <a href="https://github.com/NMoroney/Gem-D3/blob/main/gd3_03_boxplot/d3_boxplot.js">this box plot</a> function is over 100 lines of code.</p>
+<p><a href="https://d3js.org">Observable</a> is a great option but nothing like have a collection of functions handy.</p>
+<p><img alt="fleuron" src="/style/fleuron.png" /></p>
+<p>So as a mini-refresher I had Gemini CLI write a similar library but just from a set of input data and a prompt.</p>
+<p>For example <a href="https://github.com/NMoroney/Gem-D3/blob/main/gd3_14_force_based_graph/alice.json">this data</a> (which tallies character co-occurences per chapter for <em>Alice in Wonderland</em>) was used with this prompt :</p>
+<pre>
+Write a Javascript function to generate a d3.js force-directed network 
+graph for the input data file alice.json.
+The function should take input parameters of input data file name, 
+plot width and plot height.
+This data consists of nodes that are characters in Alice In Wonderland.
+The edges or links in this data are chapters in which both characters 
+are mentioned.
+The graph nodes should be labeled.
+Generate the JavaScript code and save to file: force_directed_graph.js.
+Also generate an index.html file to call this javascript function.
+Do not start any processes to install or invoke an http server.
+</pre>
+
+<p>The resulting interactive <a href="https://en.wikipedia.org/wiki/Force-directed_graph_drawing">force-based network</a> is below:</p>
+<div id="plot"></div>
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="/d3/force_directed_graph.js"></script>
+<p><svg width="400" height="400"></svg></p>
+<script>
+    createForceDirectedGraph("/datasets/alice.json", 400, 400);
+</script>
+
+<p>Not bad. Read through the code and in some cases made minor edits to the code.</p>
+<p>One occasional error was new-line handling, but that was easy to spot. But reading the code I was also reminded of some of JavaScripts idiosyncrasies (ah yes converting from a string to a number using <code>d[xColumn] = +d[xColumn];</code> ).</p>
+<p>One nice thing about using visualization as a test case was if it rendered in a browser it was a pretty good initial test of the code. In addition, the D3.js plots were compared to corresponding matplotlib (or other python library) renderings.</p>
+<p>So with Gemini CLI I was able to turn 10 datasets into 1,500 lines of useful code.</p>
+<p><img alt="fleuron" src="/style/fleuron.png" /></p>
+<p>Another example was plotting a map of the <a href="https://github.com/NMoroney/Gem-D3/tree/main/gd3_04_us_states_plot">states of the USA</a>.</p>
+<p>Which it did. Neat. So then I tried to get a plot of the <a href="https://en.wikipedia.org/wiki/James_River">James River</a> in <a href="https://nmoroney.github.io/chirps/2026/260213-fall_line_richmond/index.html">Virginia</a>.</p>
+<p>This spent a long time doing nothing. Gemini CLI tried multiple approaches to finding the data but failed. As a result the Gem D3 repo does not include a James River plot.</p>
+<p>Which highlights one limit of Gemini CLI generated code. </p>
+<p>If specific data is required but not available, it will only generate at best a partial answer.</p><br><small>2025-03-26<br>NMoroney</small>
+<footer>
+<hr>
+  | <a href="https://numanticsolutions.com">Numantic Solutions</a> 
+  | <a href=/pages/links>Links</a>
+  | <a href=/pages/colophon>Colophon</a>
+  | <a href=/pages/principles>Principles</a> |
+</footer>
+</html>
