@@ -1,3 +1,8 @@
+// (c) 2026 : https://github.com/NMoroney
+// MIT License
+// https://github.com/NMoroney/Struse/tree/main/javascript
+// https://nmoroney.github.io/notes/2026/260423_struse/index.html
+//
 
 m1 = {
   "a": "&#x10300;",  // OLD ITALIC LETTER A 
