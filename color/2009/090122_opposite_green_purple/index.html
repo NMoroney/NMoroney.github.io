@@ -1,0 +1,45 @@
+<html>
+<title>The Opposite of Green is Purple?</title>
+<link rel="stylesheet" href="/style/basic.css">
+<link rel="stylesheet" href="/style/blockquote.css">
+<header>
+  <h1><span id="This Endless Frame">This Endless Frame</span></h1>
+  | <a href="/">Home</a> 
+  | <a href="/data">Data</a> 
+  | <a href="/color">Color</a> 
+  | <a href="/3d">3D</a> 
+  | <a href="/notes">Notes</a> 
+  | <a href="/rivers">Rivers</a> 
+  | <a href="/chirps">Chirps</a> | 
+  <hr>
+</header>
+<h3>The Opposite of Green is Purple?</h3>
+<p>At <a href="https://spie.org/conferences-and-exhibitions/past-conferences-and-exhibitions/electronic-imaging-2009">EI'2009</a> in San Jose I presented the paper "The Opposite of Green is Purple?" </p>
+<p>The abstract of this paper is below :</p>
+<blockquote>
+<p>The conventional understanding of opponent colors has red and green as one axis and yellow and blue on a second axis. This perceptual opponency is a result of the trichromatic nature of human color vision in combination with subsequent processing in the visual system. This red-green and yellow-blue opponency is fundamental to many different color spaces. CIELAB, CIELUV, CIECAM02, IPT, YCC and more all incorporate this concept of chromatic opponency. In most cases the yellow and blue opponent axes are reasonable. However for the red-green axis it is more like a purple- green axis due to a consistent, significant bending of the red-green axis. Is dark purple the opposite of green? This paper summarizes the result of analyzing a wide range of color spaces based on their actual opponency. The consistent limitation of a shared matrix formulation for opponency is discussed and finally a simple, invertible color space is considered. The angular differences between quadrants and computed antonyms is shown to be significantly more consistent using this hypothetical alternative color space.</p>
+</blockquote>
+<p>The full paper is <a href="https://github.com/NMoroney/public/blob/master/docs/papers/EI_2009-the_opposite_of_green_is_purple.pdf">here</a>.</p>
+<p><img alt="fleuron" src="/style/fleuron.png" /></p>
+<p>As an alternative to a 3x3 matrix, a min() operator is used to compute an opponent channel for a YCiCii encoding. </p>
+<p>So to convert RGB to YCiCii (and back again) the following can be used :</p>
+<div>
+<style>
+.gist {
+    font-family: 'Courier New', Courier, monospace !important;
+    font-size: 14px !important;
+}
+</style>
+<script src="https://gist.github.com/NMoroney/cd299a4b53790879850e2d51529dc85a.js"></script>
+</div>
+
+<p>Which is still not a bad model for the after images in Figure 1 :</p>
+<p><img src="/images/2009/0901-opposite_green_purple-01.jpg" width=600px></p><br><small>2009-01-22<br>NMoroney</small>
+<footer>
+<hr>
+  | <a href="https://numanticsolutions.com">Numantic Solutions</a> 
+  | <a href=/pages/links>Links</a>
+  | <a href=/pages/colophon>Colophon</a>
+  | <a href=/pages/principles>Principles</a> |
+</footer>
+</html>
