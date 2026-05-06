@@ -1,0 +1,85 @@
+<html>
+<title>ZIP Code Highlighter</title>
+<link rel="stylesheet" href="/style/basic.css">
+<link rel="stylesheet" href="/style/blockquote.css">
+<header>
+  <h1><span id="This Endless Frame">This Endless Frame</span></h1>
+  | <a href="/">Home</a> 
+  | <a href="/data">Data</a> 
+  | <a href="/color">Color</a> 
+  | <a href="/3d">3D</a> 
+  | <a href="/rivers">Rivers</a> 
+  | <a href="/notes">Notes</a> 
+  | <a href="/chirps">Chirps</a> | 
+  <hr>
+</header>
+<h3>ZIP Code Highlighter</h3>
+<style>
+    .controls {
+        margin-bottom: 20px;
+        width: 300px;
+    }
+    #zip-slider {
+        width: 100%;
+    }
+    #viz {
+        /* border: 1px solid #ccc; */
+    }
+</style>
+
+<p>Use the <i>slider</i> below to highlight a given range of US <a href="https://en.wikipedia.org/wiki/ZIP_Code">ZIP codes</a>.</p>
+
+<div class="controls">
+    <div id="zip-range-display" style="font-weight: bold; margin-top: 10px;">Range: ...</div>
+    <!-- <label for="zip-slider">ZIP Code:</label> -->
+    <input type="range" id="zip-slider">
+    <!-- <div id="zip-range-display" style="font-weight: bold; margin-top: 10px;">Range Highlighted: ...</div> -->
+</div>
+
+<div id="viz"></div>
+
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script src="/d3/zip_code_highlighter_d3.js"></script>
+<script>
+    // Initialize the highlighter with the TSV data
+    // initZipHighlighter("#viz", "/datasets/us-48_zip_codes-lat_lon-1f.tsv");
+    initZipHighlighter("#viz", "https://raw.githubusercontent.com/NMoroney/public/refs/heads/master/data/us-48_zip_codes-lat_lon-1f.tsv");
+</script>
+
+<p>The above scatter plot of ZIP codes has lightness encoding such that lower ZIP codes are darker and higher ZIP codes are lighter. The gray points are also plotted with transperency to help render the 40,000 ZIP codes.</p>
+<p>The orange shows the highlighted range of selected ZIP codes. The highlighting always shows 500 ZIP codes.</p>
+<p>Very roughly speaking, ZIP codes increase from east to west but they are not particularly <a href="https://en.wikipedia.org/wiki/Boustrophedon">boustrophedonic</a>.</p>
+<p><img alt="fleuron" src="/style/fleuron.png" /></p>
+<p>The above visualization uses <a href="https://d3js.org">D3.js</a> It was generated using <a href="https://docs.cloud.google.com/gemini/docs/codeassist/gemini-cli">Gemini CLI</a> based on <a href="https://github.com/Numantic-NMoroney/ZipHighlighter">this Streamlit implementation</a>.</p>
+<p>The porting prompt was:</p>
+<pre>
+For the input data file, us-48_zip_codes-lat_lon-1f.tsv.zip, and the input 
+python file, zip_code_highlighter.py, a data visualization of the US zip codes 
+is created.
+Read the python file and modify to replace usage of the streamlit library 
+with a version using only standard javascript and the d3.js visualization 
+library only. The revised version should not use any python.
+Save the ported javascript code to the file zip_code_highlighter_d3.js.
+Save an example index.html file which shows the usage of the zip code 
+highlighter javascript.
+Save this prompt to the file prompt_zip_highlight_d3.txt and stop.
+</pre>
+
+<p>The end result is Python and Streamlit were ported to JavaScript and D3.js using Gemini CLI. This workflow allows quick protoyping with Python and then static deployment via JavaScript. The resulting D3.js is also less prone to rendering artifacts and the animation is smoothly updated.</p>
+<p><img alt="fleuron" src="/style/fleuron.png" /></p>
+<p>And the above interface rendered as an animated gif using <a href="https://gist.github.com/NMoroney/a157b5b0cdf8ee618e52737646afd0e3">screenshots_to_gif.py</a> :</p>
+<p><img src="https://github.com/NMoroney/public/blob/master/gifs/2605-zip_code_highlighter.gif?raw=true"></p>
+<details>
+  <summary><small>Attribution</small></summary>
+  <p>
+    <small>ZIP Code Highlighter animation<br>May 2026<br>GIF: NMoroney</a></small>
+  </p>
+</details><br><small>2025-05-05<br>NMoroney</small>
+<footer>
+<hr>
+  | <a href="https://numanticsolutions.com">Numantic Solutions</a> 
+  | <a href=/pages/links>Links</a>
+  | <a href=/pages/colophon>Colophon</a>
+  | <a href=/pages/principles>Principles</a> |
+</footer>
+</html>
