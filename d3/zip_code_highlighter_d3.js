@@ -41,7 +41,7 @@ async function initZipHighlighter(containerId, dataUrl) {
         .append("circle")
         .attr("cx", d => x(d.lon))
         .attr("cy", d => y(d.lat))
-        .attr("r", 2.5)   // 1.5
+        .attr("r", 2.0)   // 1.5
         .attr("fill", d => {
             const gray = d.zip / 110000;
             return `rgba(${gray * 255}, ${gray * 255}, ${gray * 255}, 0.2)`;
@@ -77,7 +77,7 @@ async function initZipHighlighter(containerId, dataUrl) {
             .append("circle")
             .attr("cx", d => x(d.lon))
             .attr("cy", d => y(d.lat))
-            .attr("r", 4)  // 2
+            .attr("r", 3)  // 2
             .merge(highlights)
             .attr("fill", "rgba(242, 140, 25, 0.8)"); // #F28C19
 
