@@ -1,0 +1,38 @@
+<html>
+<title>A Radial Sampling of the OSA Uniform Color Scales</title>
+<link rel="stylesheet" href="/style/basic.css">
+<link rel="stylesheet" href="/style/blockquote.css">
+<header>
+  <h1><span id="This Endless Frame">This Endless Frame</span></h1>
+  | <a href="/">Home</a> 
+  | <a href="/data">Data</a> 
+  | <a href="/color">Color</a> 
+  | <a href="/3d">3D</a> 
+  | <a href="/rivers">Rivers</a> 
+  | <a href="/notes">Notes</a> 
+  | <a href="/chirps">Chirps</a> | 
+  <hr>
+</header>
+<h3>A Radial Sampling of the OSA Uniform Color Scales</h3>
+<p>I presented "A Radial Sampling of the OSA Uniform Color Scales" at CIC'11 in 2003.</p>
+<p>The intent was a <a href="https://en.wikipedia.org/wiki/Munsell_color_system">Munsell</a>-like radial set of points to complement the original regular <a href="https://en.wikipedia.org/wiki/Rhombohedron">rhombohedral lattice</a> sampling.</p>
+<p>From the abstract :</p>
+<blockquote>
+<p>The OSA Uniform Color Scales were derived using a unique geometry for the physical samples. Regular rhombohedral packing allows each sample to be compared to twelve other equally distant samples. While this sampling scheme provides an efficient geometry for sample comparison and allows multiple cleavage planes, it obscures the underlying perceptual attributes. However, it is relatively straightforward to compute a radial sampling of data points in OSA. This radial sampling results in a distance from the achromatic axis and an angular quantity and can be used to compare other color spaces. This paper presents a method and considerations for computing the radial sampling. The utility of this data is demonstrated by comparing the perceptual uniformity of five different color spaces.</p>
+</blockquote>
+<p>The full paper is <a href="https://github.com/NMoroney/public/blob/master/docs/papers/cic11-radial_osa_ucs.pdf">here</a>.</p>
+<p><a href="https://en.wikipedia.org/wiki/TL;DR">TL;DR</a> I applied <a href="https://en.wikipedia.org/wiki/Newton%27s_method">Newton-Raphson</a> to the <a href="https://en.wikipedia.org/wiki/OSA-UCS">OSA UCS forward model</a>:</p>
+<p><img src="/images/2003/2003-osa_ucs_equations.jpg"><p></p>
+<p>The corresponding dataset is <a href="https://github.com/NMoroney/public/blob/master/data/osa-radial-560.txt">here</a>.</p>
+<p><img alt="fleuron" src="/style/fleuron.png" /></p>
+<p>In 2026, I was looking for a color dataset to use for a <a href="https://en.wikipedia.org/wiki/Three.js">Three.js</a> point to sphere rendering expriment.</p>
+<p>So I generated <a href="https://github.com/NMoroney/public/blob/master/data/osa-radial-560-ljg_srgbhex.tsv">this dataset</a>.</p>
+<p>The resulting interactive 3D visualization is here.</p><br><small>2003-11-05<br>NMoroney</small>
+<footer>
+<hr>
+  | <a href="https://numanticsolutions.com">Numantic Solutions</a> 
+  | <a href=/pages/links>Links</a>
+  | <a href=/pages/colophon>Colophon</a>
+  | <a href=/pages/principles>Principles</a> |
+</footer>
+</html>

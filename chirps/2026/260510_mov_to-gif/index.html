@@ -1,5 +1,5 @@
 <html>
-<title>MOV to gif at 10 FPS</title>
+<title>MOV to gif</title>
 <link rel="stylesheet" href="/style/basic.css">
 <link rel="stylesheet" href="/style/blockquote.css">
 <header>
@@ -13,7 +13,7 @@
   | <a href="/chirps">Chirps</a> | 
   <hr>
 </header>
-<h3>MOV to gif at 10 FPS</h3>
+<h3>MOV to gif</h3>
 <p>Convert MOV or iPhone video to gif file using <a href="https://pypi.org/project/moviepy/">moviepy</a>.</p>
 <div>
 <style>
@@ -25,6 +25,23 @@
 </style>
 <script src="https://gist.github.com/NMoroney/ae121d3c5907f070fc945a3f7f4c5c56.js"></script>
 </div>
+
+<!--
+# Using moviepy (2.2.1)
+#
+
+from moviepy.video.io.VideoFileClip import VideoFileClip
+from moviepy.video.fx.Resize import Resize
+
+clip = VideoFileClip("Screen Recording 2026-05-10 at 9.01.52 AM.mov")
+
+resized = clip.with_effects([Resize((0.25))])
+
+resized.write_gif("output.gif", fps=10)
+
+clip.close()
+resized.close()
+-->
 
 <p><img src="https://github.com/NMoroney/public/blob/master/gifs/2603_between_greensburg_and_pittsburgh.gif?raw=true"></p>
 <details>

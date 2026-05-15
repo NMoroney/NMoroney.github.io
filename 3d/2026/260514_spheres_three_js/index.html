@@ -1,0 +1,68 @@
+<html>
+<title>Points to Spheres Using Three.js</title>
+<link rel="stylesheet" href="/style/basic.css">
+<link rel="stylesheet" href="/style/blockquote.css">
+<header>
+  <h1><span id="This Endless Frame">This Endless Frame</span></h1>
+  | <a href="/">Home</a> 
+  | <a href="/data">Data</a> 
+  | <a href="/color">Color</a> 
+  | <a href="/3d">3D</a> 
+  | <a href="/rivers">Rivers</a> 
+  | <a href="/notes">Notes</a> 
+  | <a href="/chirps">Chirps</a> | 
+  <hr>
+</header>
+<h3>Points to Spheres Using Three.js</h3>
+<script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
+  }
+}
+</script>
+
+<p>Combining <a href="https://nmoroney.github.io/data/2026/260326_datasets_to_code/index.html">data-driven prompts</a>, 3D and color, I saved <a href="https://github.com/NMoroney/public/blob/master/data/osa-radial-560-ljg_srgbhex.tsv">this dataset</a> to a file named in_xyz_hex.tsv.</p>
+<p>(The backstory for this dataset is here.)</p>
+<p>I then used the following prompt with Gemini CLI :</p>
+<pre>
+Read the input file in_xyz_hex.tsv which contains XYZ data in the first 
+three columns and hexadecimal RGB data in the forth column.
+Write a JavaScript program using the three.js library to render the input 
+data as one colored sphere for each input point.
+That is each XYZ value in the input should be rendered as a single sphere 
+with the hexadecimal RGB value assigned to that sphere.
+Save this code to the file points_to_spheres.js.
+Also save an index.html showing how this JavaScript is used.
+Finally save this prompt to the file prompt_to_spheres.txt
+</pre>
+
+<p>The result is shown below - it's interactive, drag it around to explore the data.</p>
+<div id="three-container"></div>
+<script type="module" src="/js/three_js/points_to_spheres.js"></script>
+<p>
+
+The first version didn't render but it was simply a matter of adding an importmap to the HTML file :
+
+<pre>
+< script type="importmap">
+{
+  "imports": {
+    "three": "https://cdn.jsdelivr.net/npm/three@v0.149.0/build/three.module.js",
+    "three/addons/": "https://cdn.jsdelivr.net/npm/three@v0.149.0/examples/jsm/"
+  }
+}
+</pre>
+
+But that worked.<p>
+
+<img src="https://github.com/NMoroney/public/blob/master/gifs/2605-radial_osa.gif?raw=true"><p><br><small>2026-05-14<br>NMoroney</small>
+<footer>
+<hr>
+  | <a href="https://numanticsolutions.com">Numantic Solutions</a> 
+  | <a href=/pages/links>Links</a>
+  | <a href=/pages/colophon>Colophon</a>
+  | <a href=/pages/principles>Principles</a> |
+</footer>
+</html>
