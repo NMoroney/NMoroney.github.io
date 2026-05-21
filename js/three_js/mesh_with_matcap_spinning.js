@@ -17,7 +17,6 @@ camera.position.x = 2.5;
 const container = document.getElementById('three-container');
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.setSize( wide, high );
-// document.body.appendChild(renderer.domElement);
 container.appendChild(renderer.domElement);
 
 const controls = new OrbitControls(camera, renderer.domElement);
@@ -27,7 +26,6 @@ scene.add(ambientLight);
 
 const textureLoader = new THREE.TextureLoader();
 const matcapTexture = textureLoader.load('/images/www/736655_D9D8D5_2F281F_B1AEAB-512px.png');
-// const matcapTexture = textureLoader.load('736655_D9D8D5_2F281F_B1AEAB-512px.png');
 
 const matcapMaterial = new THREE.MeshMatcapMaterial({
     matcap: matcapTexture
