@@ -1,0 +1,53 @@
+<html>
+<title>Sunflower Sampling and Distance Transforms</title>
+<link rel="stylesheet" href="/style/basic.css">
+<link rel="stylesheet" href="/style/blockquote.css">
+<header>
+  <h1><span id="This Endless Frame">This Endless Frame</span></h1>
+  | <a href="/">Home</a> 
+  | <a href="/data">Data</a> 
+  | <a href="/color">Color</a> 
+  | <a href="/3d">3D</a> 
+  | <a href="/rivers">Rivers</a> 
+  | <a href="/notes">Notes</a> 
+  | <a href="/chirps">Chirps</a> | 
+  <hr>
+</header>
+<h3>Sunflower Sampling and Distance Transforms</h3>
+<p>Sunflower sampling or <a href="https://fractalfoundation.org/OFC/OFC-11-3.html">Fibonacci packing</a> is a method of using the <a href="https://en.wikipedia.org/wiki/Golden_angle">golden angle</a> to generate a 2D point sampling.</p>
+<p>A while ago, I wrote a <a href="https://github.com/NMoroney/macos-cli-examples/tree/main/examples/mc_02_opencv">C++11-ish version</a> compiled with <code>-std=c++17</code>.</p>
+<p>Currently, I'm mostly writing python.</p>
+<p>I asked Gemini to port the C++ to <a href="https://github.com/NMoroney/macos-cli-examples/blob/main/examples/mc_02_opencv/px_ocv_distance_transform.py">python</a> and got the following for sunflower sampling :</p>
+<script src="https://gist.github.com/NMoroney/01425e080f6635193042779232aa2729.js"></script>
+
+<p>Not bad. </p>
+<p>The original code also used OpenCV to apply a <a href="https://github.com/NMoroney/macos-command_line_examples/tree/main/examples/mc_02_opencv">distance transform</a>.</p>
+<p>The result of a distance transformed sunflower sampling is this groovy image :</p>
+<p><img src="/images/2026/2608_ocv_sunflower_distances.jpg"></p>
+<details>
+  <summary><small>Attribution</small></summary>
+  <p>
+    <small>Multi-lingual sunflower sampled distance transform image.<br>August 2026<br>Image: NMoroney</a></small>
+  </p>
+</details>
+
+<p>Then I had Gemni port the original code to <a href="https://github.com/NMoroney/macos-cli-examples/blob/main/examples/mc_02_opencv/px_ocv_distance_transform_17.cc">C++17</a>.</p>
+<p>Finally I had Gemini port the code to <a href="https://github.com/NMoroney/macos-cli-examples/blob/main/examples/mc_02_opencv/px_ocv_distance_transform_23.cc">C++23</a>.</p>
+<p>Which gets to <code>std::views</code> in the below code.</p>
+<script src="https://gist.github.com/NMoroney/19fa4ab3db2f0e6994ad3d343f246bed.js"></script>
+
+<p>Also not bad.</p>
+<p>But I can tell it's going to take me some time for me to warm up to <code>std::views</code>.</p>
+<p>AI commentary is bimodal, but for multi-lingual coding it's promising.</p>
+<p><img alt="fleuron" src="/style/fleuron.png" /></p>
+<p>Finally a hard coding convention for me.</p>
+<p>Choose the name that's easier to spell.</p>
+<p>So it's <code>sunflower_sample</code> and not <code>fibonacci_pack</code> because sunflower is easier for me to spell.</p><br><small>2026-08-26<br>NMoroney</small>
+<footer>
+<hr>
+  | <a href="https://numanticsolutions.com">Numantic Solutions</a> 
+  | <a href=/pages/links>Links</a>
+  | <a href=/pages/colophon>Colophon</a>
+  | <a href=/pages/principles>Principles</a> |
+</footer>
+</html>
