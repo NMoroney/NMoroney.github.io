@@ -1,0 +1,50 @@
+<html>
+<title>Turning the Luminance Up to 11</title>
+<link rel="stylesheet" href="/style/basic.css">
+<link rel="stylesheet" href="/style/blockquote.css">
+<header>
+  <h1><span id="This Endless Frame">This Endless Frame</span></h1>
+  | <a href="/">Home</a> 
+  | <a href="/data">Data</a> 
+  | <a href="/color">Color</a> 
+  | <a href="/3d">3D</a> 
+  | <a href="/rivers">Rivers</a> 
+  | <a href="/notes">Notes</a> 
+  | <a href="/chirps">Chirps</a> | 
+  <hr>
+</header>
+<h3>Turning the Luminance Up to 11</h3>
+<p><a href="https://fr.linkedin.com/in/david-pettersson?trk=public_post_feed-actor-name">David Pettersson</a> wrote a post on <a href="https://www.linkedin.com/feed/update/urn:li:activity:7493336224745627648/">gain maps</a> that has a nice HDR example which he describes :</p>
+<blockquote>
+<p>"LinkedIn re-encodes everything you post and discards the metadata gain maps live in. What survives is the ICC profile, which means: PQ-encode the pixels, embed a Rec.2020 PQ profile and let the color management do its work."</p>
+</blockquote>
+<p>The result is an image with luminance <a href="https://en.wikipedia.org/wiki/Up_to_eleven">turned up to 11</a>.</p>
+<p>But I was curious how embedding a <a href="https://en.wikipedia.org/wiki/Rec._2020">Rec. 2020</a> <a href="https://en.wikipedia.org/wiki/Perceptual_quantizer">PQ</a> <a href="https://en.wikipedia.org/wiki/Candela_per_square_metre">1200 nit</a> profile would compare to a gain mapped version.</p>
+<p>So starting with these <a href="https://commons.wikimedia.org/wiki/File:Tone_control_knobs_and_filter_switches_on_Pioneer_SA-608_stereo_amplifier.jpg">tone control knobs</a> by <a href="https://commons.wikimedia.org/wiki/User:Vogler">Vogler</a> I created the scaled and cropped version below.</p>
+<p><img src="https://github.com/NMoroney/Awesome-Gain-Maps/blob/main/notes/tone-control/2609-tone_control.jpg?raw=true"></p>
+<p>To compare with David's result, I used PIL to extract the <a href="https://en.wikipedia.org/wiki/ICC_profile">ICC profile</a> from his example image :</p>
+<script src="https://gist.github.com/NMoroney/c1431ef03e5abe16bee95cc4a8c9e7c3.js"></script>
+
+<p>The resulting profile is <a href="https://github.com/NMoroney/Awesome-Gain-Maps/blob/main/notes/tone-control/rec_2020_pq_1200nits.icc">here</a>. PIL can also be used to embed this profile in an image :</p>
+<script src="https://gist.github.com/NMoroney/0f42d77893096a91f9fe4e0d345d2d50.js"></script>
+
+<p>Simply embedding this profile with the above cropped image though is <a href="https://github.com/NMoroney/Awesome-Gain-Maps/blob/main/notes/tone-control/2609-tone_control-rec20pq1200.jpg">gnarly</a>. The source image also has to be PQ encoded. Since we're starting with a SDR image the color <a href="https://en.wiktionary.org/wiki/chapuza">chpuza</a> will be to desaturate and reduce the contrast as hown below :</p>
+<p><img src="https://github.com/NMoroney/Awesome-Gain-Maps/blob/main/notes/tone-control/2609-tone_control-edit.jpg?raw=true"></p>
+<p>And now when the Rec. 2020 PQ 1200 nit profile is embedded the HDR version is :</p>
+<p><img src="https://github.com/NMoroney/Awesome-Gain-Maps/blob/main/notes/tone-control/2609-tone_control-edit-rec20pq1200.jpg?raw=true"></p>
+<p>The appearance of the overhead lighting reflected off the top of the knobs really pops.</p>
+<p>In comparison, I also genearted a version of the tone control knobs with a gain map. In this case the original scaled and cropped version was used as input. The resulting gain mapped version is below :</p>
+<p><img src="https://github.com/NMoroney/Awesome-Gain-Maps/blob/main/notes/tone-control/2609-tone_control_gm.jpg?raw=true"></p>
+<p>Similar but different. </p>
+<p>In this case I decided to keep more of the warmth in the original image.  In addition, with gain maps its easier to create local luminance adjustments.</p>
+<p><img src="/style/fleuron.png"><p></p>
+<p>Note that the above HDR images require your hardware/OS/browser to all support HDR rendering.</p>
+<p>If you are viewing this with SDR only rendering, the results will not be evident.</p><br><small>2026-09-01<br>NMoroney</small>
+<footer>
+<hr>
+  | <a href="https://numanticsolutions.com">Numantic Solutions</a> 
+  | <a href=/pages/links>Links</a>
+  | <a href=/pages/colophon>Colophon</a>
+  | <a href=/pages/principles>Principles</a> |
+</footer>
+</html>
